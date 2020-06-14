@@ -1,0 +1,526 @@
+2020-06-09 15:25:46.063  WARN 4401 --- [main] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-06-09 15:25:51.068  INFO 4401 --- [main] r.b.publisher.PublisherApplication       : Starting PublisherApplication on iMac-Mingian.local with PID 4401 (/Users/mingianbasanov/IdeaProjects/publisher/target/classes started by mingianbasanov in /Users/mingianbasanov/IdeaProjects/publisher)
+2020-06-09 15:25:51.068  INFO 4401 --- [main] r.b.publisher.PublisherApplication       : No active profile set, falling back to default profiles: default
+2020-06-09 15:25:51.901  INFO 4401 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-06-09 15:25:51.911  INFO 4401 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-06-09 15:25:51.913  INFO 4401 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-06-09 15:25:52.039  INFO 4401 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:25:52.045  INFO 4401 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:25:52.046  INFO 4401 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:25:52.295  INFO 4401 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-09 15:25:52.309  INFO 4401 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-09 15:25:52.309  INFO 4401 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-09 15:25:52.537  INFO 4401 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-09 15:25:52.538  INFO 4401 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1427 ms
+2020-06-09 15:25:52.822  INFO 4401 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-09 15:25:52.949  INFO 4401 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:25:53.122  INFO 4401 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:25:53.122  INFO 4401 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2020-06-09 15:25:53.122  INFO 4401 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:25:53.123  INFO 4401 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:25:53.123  INFO 4401 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 1 subscriber(s).
+2020-06-09 15:25:53.123  INFO 4401 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:25:53.123  INFO 4401 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'actionMessageGateway'
+2020-06-09 15:25:53.123  INFO 4401 --- [main] o.s.i.gateway.GatewayProxyFactoryBean    : started bean 'actionMessageGateway'
+2020-06-09 15:25:53.171  INFO 4401 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-09 15:25:53.178  INFO 4401 --- [main] r.b.publisher.PublisherApplication       : Started PublisherApplication in 17.602 seconds (JVM running for 24.414)
+2020-06-09 15:27:16.406  INFO 4401 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-09 15:27:16.407  INFO 4401 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-09 15:27:16.411  INFO 4401 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-06-09 15:27:16.480  INFO 4401 --- [http-nio-8080-exec-1] o.s.i.h.s.MessagingMethodInvokerHelper   : Overriding default instance of MessageHandlerMethodFactory with provided one.
+2020-06-09 15:27:16.593 ERROR 4401 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8189/subscribe": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)] with root cause
+
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_241]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_241]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_241]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_241]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_241]
+	at java.net.Socket.connect(Socket.java:606) ~[na:1.8.0_241]
+	at java.net.Socket.connect(Socket.java:555) ~[na:1.8.0_241]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180) ~[na:1.8.0_241]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[na:1.8.0_241]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[na:1.8.0_241]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:1.8.0_241]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[na:1.8.0_241]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[na:1.8.0_241]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226) ~[na:1.8.0_241]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162) ~[na:1.8.0_241]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056) ~[na:1.8.0_241]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990) ~[na:1.8.0_241]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.client.RestTemplate.postForLocation(RestTemplate.java:388) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at ru.basanov.publisher.itegration.ActionMessageListener.handler(ActionMessageListener.java:20) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.integration.handler.support.MessagingMethodInvokerHelper$HandlerMethod.invoke(MessagingMethodInvokerHelper.java:1102) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.handler.support.MessagingMethodInvokerHelper.invokeHandlerMethod(MessagingMethodInvokerHelper.java:581) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.handler.support.MessagingMethodInvokerHelper.processInternal(MessagingMethodInvokerHelper.java:477) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.handler.support.MessagingMethodInvokerHelper.process(MessagingMethodInvokerHelper.java:355) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.handler.MethodInvokingMessageProcessor.processMessage(MethodInvokingMessageProcessor.java:108) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.handler.ServiceActivatingHandler.handleRequestMessage(ServiceActivatingHandler.java:104) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleMessageInternal(AbstractReplyProducingMessageHandler.java:134) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:62) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.dispatcher.AbstractDispatcher.tryOptimizedDispatch(AbstractDispatcher.java:115) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.dispatcher.UnicastingDispatcher.doDispatch(UnicastingDispatcher.java:133) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.dispatcher.UnicastingDispatcher.dispatch(UnicastingDispatcher.java:106) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.channel.AbstractSubscribableChannel.doSend(AbstractSubscribableChannel.java:72) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:570) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:520) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.messaging.core.GenericMessagingTemplate.doSend(GenericMessagingTemplate.java:187) ~[spring-messaging-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.messaging.core.GenericMessagingTemplate.doSend(GenericMessagingTemplate.java:166) ~[spring-messaging-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.messaging.core.GenericMessagingTemplate.doSend(GenericMessagingTemplate.java:47) ~[spring-messaging-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.messaging.core.AbstractMessageSendingTemplate.send(AbstractMessageSendingTemplate.java:109) ~[spring-messaging-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.messaging.core.AbstractMessageSendingTemplate.convertAndSend(AbstractMessageSendingTemplate.java:151) ~[spring-messaging-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.messaging.core.AbstractMessageSendingTemplate.convertAndSend(AbstractMessageSendingTemplate.java:143) ~[spring-messaging-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.integration.gateway.MessagingGatewaySupport.send(MessagingGatewaySupport.java:436) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.gateway.GatewayProxyFactoryBean.sendOrSendAndReceive(GatewayProxyFactoryBean.java:652) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.gateway.GatewayProxyFactoryBean.invokeGatewayMethod(GatewayProxyFactoryBean.java:573) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.gateway.GatewayProxyFactoryBean.doInvoke(GatewayProxyFactoryBean.java:540) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.integration.gateway.GatewayProxyFactoryBean.invoke(GatewayProxyFactoryBean.java:529) ~[spring-integration-core-5.3.0.RELEASE.jar:5.3.0.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at com.sun.proxy.$Proxy59.fire(Unknown Source) ~[na:na]
+	at ru.basanov.publisher.controller.MessageController.send(MessageController.java:30) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-06-09 15:27:26.413  INFO 4401 --- [SpringContextShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'actionMessageGateway'
+2020-06-09 15:27:26.413  INFO 4401 --- [SpringContextShutdownHook] o.s.i.gateway.GatewayProxyFactoryBean    : stopped bean 'actionMessageGateway'
+2020-06-09 15:27:26.413  INFO 4401 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:27:26.414  INFO 4401 --- [SpringContextShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2020-06-09 15:27:26.414  INFO 4401 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:27:26.414  INFO 4401 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:27:26.414  INFO 4401 --- [SpringContextShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 0 subscriber(s).
+2020-06-09 15:27:26.414  INFO 4401 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:27:26.416  INFO 4401 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:27:26.416  INFO 4401 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-09 15:27:56.402  WARN 4435 --- [main] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5006 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-06-09 15:28:01.408  INFO 4435 --- [main] r.b.publisher.PublisherApplication       : Starting PublisherApplication on iMac-Mingian.local with PID 4435 (/Users/mingianbasanov/IdeaProjects/publisher/target/classes started by mingianbasanov in /Users/mingianbasanov/IdeaProjects/publisher)
+2020-06-09 15:28:01.409  INFO 4435 --- [main] r.b.publisher.PublisherApplication       : No active profile set, falling back to default profiles: default
+2020-06-09 15:28:01.959  INFO 4435 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-06-09 15:28:01.964  INFO 4435 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-06-09 15:28:01.966  INFO 4435 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-06-09 15:28:02.008  INFO 4435 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:28:02.013  INFO 4435 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:28:02.014  INFO 4435 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:28:02.157  INFO 4435 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-09 15:28:02.164  INFO 4435 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-09 15:28:02.165  INFO 4435 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-09 15:28:02.259  INFO 4435 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-09 15:28:02.259  INFO 4435 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 824 ms
+2020-06-09 15:28:02.345  INFO 4435 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-09 15:28:02.439  INFO 4435 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:28:02.606  INFO 4435 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:28:02.606  INFO 4435 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2020-06-09 15:28:02.606  INFO 4435 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:28:02.606  INFO 4435 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:28:02.606  INFO 4435 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 1 subscriber(s).
+2020-06-09 15:28:02.606  INFO 4435 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:28:02.606  INFO 4435 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'actionMessageGateway'
+2020-06-09 15:28:02.606  INFO 4435 --- [main] o.s.i.gateway.GatewayProxyFactoryBean    : started bean 'actionMessageGateway'
+2020-06-09 15:28:02.629  INFO 4435 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-09 15:28:02.637  INFO 4435 --- [main] r.b.publisher.PublisherApplication       : Started PublisherApplication in 16.738 seconds (JVM running for 22.273)
+2020-06-09 15:29:02.617  INFO 4435 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-09 15:29:02.655  INFO 4435 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-09 15:29:02.660  INFO 4435 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-06-09 15:29:02.683  INFO 4435 --- [http-nio-8080-exec-1] o.s.i.h.s.MessagingMethodInvokerHelper   : Overriding default instance of MessageHandlerMethodFactory with provided one.
+2020-06-09 15:29:02.685  INFO 4435 --- [http-nio-8080-exec-1] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@6dbd0331
+2020-06-09 15:29:22.111  INFO 4435 --- [SpringContextShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'actionMessageGateway'
+2020-06-09 15:29:22.111  INFO 4435 --- [SpringContextShutdownHook] o.s.i.gateway.GatewayProxyFactoryBean    : stopped bean 'actionMessageGateway'
+2020-06-09 15:29:22.111  INFO 4435 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:29:22.111  INFO 4435 --- [SpringContextShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2020-06-09 15:29:22.111  INFO 4435 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:29:22.111  INFO 4435 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:29:22.111  INFO 4435 --- [SpringContextShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 0 subscriber(s).
+2020-06-09 15:29:22.112  INFO 4435 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:29:22.113  INFO 4435 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:29:22.113  INFO 4435 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-09 15:36:49.074  WARN 4560 --- [main] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5001 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-06-09 15:36:54.119  INFO 4560 --- [main] r.b.publisher.PublisherApplication       : Starting PublisherApplication on iMac-Mingian.local with PID 4560 (/Users/mingianbasanov/IdeaProjects/publisher/target/classes started by mingianbasanov in /Users/mingianbasanov/IdeaProjects/publisher)
+2020-06-09 15:36:54.120  INFO 4560 --- [main] r.b.publisher.PublisherApplication       : No active profile set, falling back to default profiles: default
+2020-06-09 15:36:55.529  INFO 4560 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-06-09 15:36:55.538  INFO 4560 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-06-09 15:36:55.540  INFO 4560 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-06-09 15:36:55.743  INFO 4560 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:36:55.774  INFO 4560 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:36:55.776  INFO 4560 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:36:56.708  INFO 4560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-09 15:36:56.759  INFO 4560 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-09 15:36:56.759  INFO 4560 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-09 15:36:57.141  INFO 4560 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-09 15:36:57.141  INFO 4560 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2923 ms
+2020-06-09 15:36:57.783  INFO 4560 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-09 15:36:57.913  INFO 4560 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:36:58.126  INFO 4560 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:36:58.127  INFO 4560 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2020-06-09 15:36:58.127  INFO 4560 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:36:58.127  INFO 4560 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:36:58.127  INFO 4560 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 1 subscriber(s).
+2020-06-09 15:36:58.127  INFO 4560 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:36:58.127  INFO 4560 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'actionMessageGateway'
+2020-06-09 15:36:58.127  INFO 4560 --- [main] o.s.i.gateway.GatewayProxyFactoryBean    : started bean 'actionMessageGateway'
+2020-06-09 15:36:58.199  INFO 4560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-09 15:36:58.207  INFO 4560 --- [main] r.b.publisher.PublisherApplication       : Started PublisherApplication in 19.725 seconds (JVM running for 27.226)
+2020-06-09 15:37:04.175  INFO 4560 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-09 15:37:04.236  INFO 4560 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-09 15:37:04.242  INFO 4560 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-06-09 15:37:04.817  INFO 4560 --- [http-nio-8080-exec-1] o.s.i.h.s.MessagingMethodInvokerHelper   : Overriding default instance of MessageHandlerMethodFactory with provided one.
+2020-06-09 15:37:04.919  INFO 4560 --- [http-nio-8080-exec-1] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@5ac80ded
+2020-06-09 15:41:36.983  INFO 4560 --- [SpringContextShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'actionMessageGateway'
+2020-06-09 15:41:36.983  INFO 4560 --- [SpringContextShutdownHook] o.s.i.gateway.GatewayProxyFactoryBean    : stopped bean 'actionMessageGateway'
+2020-06-09 15:41:36.983  INFO 4560 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:41:36.984  INFO 4560 --- [SpringContextShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2020-06-09 15:41:36.984  INFO 4560 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:41:36.984  INFO 4560 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:41:36.984  INFO 4560 --- [SpringContextShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 0 subscriber(s).
+2020-06-09 15:41:36.984  INFO 4560 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:41:36.985  INFO 4560 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:41:36.986  INFO 4560 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-09 15:42:16.136  WARN 4630 --- [main] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-06-09 15:42:21.203  INFO 4630 --- [main] r.b.publisher.PublisherApplication       : Starting PublisherApplication on iMac-Mingian.local with PID 4630 (/Users/mingianbasanov/IdeaProjects/publisher/target/classes started by mingianbasanov in /Users/mingianbasanov/IdeaProjects/publisher)
+2020-06-09 15:42:21.204  INFO 4630 --- [main] r.b.publisher.PublisherApplication       : No active profile set, falling back to default profiles: default
+2020-06-09 15:42:21.842  INFO 4630 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-06-09 15:42:21.847  INFO 4630 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-06-09 15:42:21.849  INFO 4630 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-06-09 15:42:21.889  INFO 4630 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:42:21.894  INFO 4630 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:42:21.895  INFO 4630 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:42:22.058  INFO 4630 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-09 15:42:22.065  INFO 4630 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-09 15:42:22.065  INFO 4630 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-09 15:42:22.185  INFO 4630 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-09 15:42:22.185  INFO 4630 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 939 ms
+2020-06-09 15:42:22.316  INFO 4630 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-09 15:42:22.406  INFO 4630 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:42:22.564  INFO 4630 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:42:22.564  INFO 4630 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2020-06-09 15:42:22.564  INFO 4630 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:42:22.564  INFO 4630 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:42:22.564  INFO 4630 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 1 subscriber(s).
+2020-06-09 15:42:22.564  INFO 4630 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:42:22.565  INFO 4630 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'actionMessageGateway'
+2020-06-09 15:42:22.565  INFO 4630 --- [main] o.s.i.gateway.GatewayProxyFactoryBean    : started bean 'actionMessageGateway'
+2020-06-09 15:42:22.589  INFO 4630 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-09 15:42:22.596  INFO 4630 --- [main] r.b.publisher.PublisherApplication       : Started PublisherApplication in 16.806 seconds (JVM running for 23.138)
+2020-06-09 15:42:32.036  INFO 4630 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-09 15:42:32.065  INFO 4630 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-09 15:42:32.071  INFO 4630 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-06-09 15:42:32.092  INFO 4630 --- [http-nio-8080-exec-1] o.s.i.h.s.MessagingMethodInvokerHelper   : Overriding default instance of MessageHandlerMethodFactory with provided one.
+2020-06-09 15:42:32.094  INFO 4630 --- [http-nio-8080-exec-1] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@740941b6
+2020-06-09 15:43:50.708  INFO 4630 --- [SpringContextShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'actionMessageGateway'
+2020-06-09 15:43:50.735  INFO 4630 --- [SpringContextShutdownHook] o.s.i.gateway.GatewayProxyFactoryBean    : stopped bean 'actionMessageGateway'
+2020-06-09 15:43:50.735  INFO 4630 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:43:50.736  INFO 4630 --- [SpringContextShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2020-06-09 15:43:50.736  INFO 4630 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:43:50.736  INFO 4630 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:43:50.736  INFO 4630 --- [SpringContextShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 0 subscriber(s).
+2020-06-09 15:43:50.736  INFO 4630 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:43:50.738  INFO 4630 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:43:50.738  INFO 4630 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-09 15:44:15.700  WARN 4653 --- [main] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-06-09 15:44:20.728  INFO 4653 --- [main] r.b.publisher.PublisherApplication       : Starting PublisherApplication on iMac-Mingian.local with PID 4653 (/Users/mingianbasanov/IdeaProjects/publisher/target/classes started by mingianbasanov in /Users/mingianbasanov/IdeaProjects/publisher)
+2020-06-09 15:44:20.729  INFO 4653 --- [main] r.b.publisher.PublisherApplication       : No active profile set, falling back to default profiles: default
+2020-06-09 15:44:22.346  INFO 4653 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-06-09 15:44:22.351  INFO 4653 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-06-09 15:44:22.353  INFO 4653 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-06-09 15:44:22.395  INFO 4653 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:44:22.399  INFO 4653 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:44:22.401  INFO 4653 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:44:22.596  INFO 4653 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-09 15:44:22.602  INFO 4653 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-09 15:44:22.602  INFO 4653 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-09 15:44:22.915  INFO 4653 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-09 15:44:22.918  INFO 4653 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2163 ms
+2020-06-09 15:44:23.057  INFO 4653 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-09 15:44:23.152  INFO 4653 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:44:23.391  INFO 4653 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:44:23.412  INFO 4653 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2020-06-09 15:44:23.412  INFO 4653 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:44:23.412  INFO 4653 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:44:23.412  INFO 4653 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 1 subscriber(s).
+2020-06-09 15:44:23.412  INFO 4653 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:44:23.413  INFO 4653 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'actionMessageGateway'
+2020-06-09 15:44:23.413  INFO 4653 --- [main] o.s.i.gateway.GatewayProxyFactoryBean    : started bean 'actionMessageGateway'
+2020-06-09 15:44:23.437  INFO 4653 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-09 15:44:23.445  INFO 4653 --- [main] r.b.publisher.PublisherApplication       : Started PublisherApplication in 18.074 seconds (JVM running for 24.456)
+2020-06-09 15:44:46.082  INFO 4653 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-09 15:44:46.093  INFO 4653 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-09 15:44:46.099  INFO 4653 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-06-09 15:44:46.120  INFO 4653 --- [http-nio-8080-exec-1] o.s.i.h.s.MessagingMethodInvokerHelper   : Overriding default instance of MessageHandlerMethodFactory with provided one.
+2020-06-09 15:44:46.122  INFO 4653 --- [http-nio-8080-exec-1] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@3911c62c
+2020-06-09 15:44:47.362  INFO 4653 --- [http-nio-8080-exec-2] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@24ed4baf
+2020-06-09 15:44:47.915  INFO 4653 --- [http-nio-8080-exec-3] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@311160ac
+2020-06-09 15:44:48.151  INFO 4653 --- [http-nio-8080-exec-4] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@6ef504ba
+2020-06-09 15:44:48.386  INFO 4653 --- [http-nio-8080-exec-5] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@147fbe9
+2020-06-09 15:46:11.043  INFO 4653 --- [SpringContextShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'actionMessageGateway'
+2020-06-09 15:46:11.052  INFO 4653 --- [SpringContextShutdownHook] o.s.i.gateway.GatewayProxyFactoryBean    : stopped bean 'actionMessageGateway'
+2020-06-09 15:46:11.052  INFO 4653 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:46:11.053  INFO 4653 --- [SpringContextShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2020-06-09 15:46:11.053  INFO 4653 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:46:11.053  INFO 4653 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:46:11.053  INFO 4653 --- [SpringContextShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 0 subscriber(s).
+2020-06-09 15:46:11.053  INFO 4653 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:46:11.055  INFO 4653 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:46:11.056  INFO 4653 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-09 15:48:27.916  WARN 4697 --- [main] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-06-09 15:48:32.965  INFO 4697 --- [main] r.b.publisher.PublisherApplication       : Starting PublisherApplication on iMac-Mingian.local with PID 4697 (/Users/mingianbasanov/IdeaProjects/publisher/target/classes started by mingianbasanov in /Users/mingianbasanov/IdeaProjects/publisher)
+2020-06-09 15:48:32.965  INFO 4697 --- [main] r.b.publisher.PublisherApplication       : No active profile set, falling back to default profiles: default
+2020-06-09 15:48:35.019  INFO 4697 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-06-09 15:48:35.024  INFO 4697 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-06-09 15:48:35.026  INFO 4697 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-06-09 15:48:35.067  INFO 4697 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:48:35.072  INFO 4697 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:48:35.073  INFO 4697 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 15:48:35.222  INFO 4697 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-09 15:48:35.230  INFO 4697 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-09 15:48:35.230  INFO 4697 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-09 15:48:35.835  INFO 4697 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-09 15:48:35.835  INFO 4697 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2844 ms
+2020-06-09 15:48:35.967  INFO 4697 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-09 15:48:36.113  INFO 4697 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:48:36.324  INFO 4697 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:48:36.325  INFO 4697 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2020-06-09 15:48:36.325  INFO 4697 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:48:36.325  INFO 4697 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:48:36.325  INFO 4697 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 1 subscriber(s).
+2020-06-09 15:48:36.325  INFO 4697 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:48:36.325  INFO 4697 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'actionMessageGateway'
+2020-06-09 15:48:36.325  INFO 4697 --- [main] o.s.i.gateway.GatewayProxyFactoryBean    : started bean 'actionMessageGateway'
+2020-06-09 15:48:36.350  INFO 4697 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-09 15:48:36.358  INFO 4697 --- [main] r.b.publisher.PublisherApplication       : Started PublisherApplication in 18.765 seconds (JVM running for 24.942)
+2020-06-09 15:49:04.491  INFO 4697 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-09 15:49:04.573  INFO 4697 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-09 15:49:04.578  INFO 4697 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-06-09 15:49:04.599  INFO 4697 --- [http-nio-8080-exec-1] o.s.i.h.s.MessagingMethodInvokerHelper   : Overriding default instance of MessageHandlerMethodFactory with provided one.
+2020-06-09 15:49:04.601  INFO 4697 --- [http-nio-8080-exec-1] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@68ebd682
+2020-06-09 15:49:10.294  INFO 4697 --- [SpringContextShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'actionMessageGateway'
+2020-06-09 15:49:10.294  INFO 4697 --- [SpringContextShutdownHook] o.s.i.gateway.GatewayProxyFactoryBean    : stopped bean 'actionMessageGateway'
+2020-06-09 15:49:10.294  INFO 4697 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 15:49:10.295  INFO 4697 --- [SpringContextShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2020-06-09 15:49:10.295  INFO 4697 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-06-09 15:49:10.295  INFO 4697 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 15:49:10.295  INFO 4697 --- [SpringContextShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 0 subscriber(s).
+2020-06-09 15:49:10.295  INFO 4697 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 15:49:10.297  INFO 4697 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-09 15:49:10.297  INFO 4697 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-09 16:03:39.102  WARN 4853 --- [main] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5006 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-06-09 16:03:44.149  INFO 4853 --- [main] r.b.publisher.PublisherApplication       : Starting PublisherApplication on iMac-Mingian.local with PID 4853 (/Users/mingianbasanov/IdeaProjects/publisher/target/classes started by mingianbasanov in /Users/mingianbasanov/IdeaProjects/publisher)
+2020-06-09 16:03:44.162  INFO 4853 --- [main] r.b.publisher.PublisherApplication       : No active profile set, falling back to default profiles: default
+2020-06-09 16:03:45.182  INFO 4853 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-06-09 16:03:45.237  INFO 4853 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-06-09 16:03:45.239  INFO 4853 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-06-09 16:03:45.314  INFO 4853 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:03:45.320  INFO 4853 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:03:45.321  INFO 4853 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:03:45.688  INFO 4853 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-09 16:03:45.701  INFO 4853 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-09 16:03:45.701  INFO 4853 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-09 16:03:46.244  INFO 4853 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-09 16:03:46.244  INFO 4853 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2007 ms
+2020-06-09 16:03:46.570  INFO 4853 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-09 16:03:46.697  INFO 4853 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-09 16:03:46.970  INFO 4853 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 16:03:46.971  INFO 4853 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2020-06-09 16:03:46.971  INFO 4853 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-06-09 16:03:46.971  INFO 4853 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 16:03:46.971  INFO 4853 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 1 subscriber(s).
+2020-06-09 16:03:46.971  INFO 4853 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 16:03:46.971  INFO 4853 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'actionMessageGateway'
+2020-06-09 16:03:46.971  INFO 4853 --- [main] o.s.i.gateway.GatewayProxyFactoryBean    : started bean 'actionMessageGateway'
+2020-06-09 16:03:47.141  INFO 4853 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-09 16:03:47.149  INFO 4853 --- [main] r.b.publisher.PublisherApplication       : Started PublisherApplication in 18.491 seconds (JVM running for 25.611)
+2020-06-09 16:03:59.402  INFO 4853 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-09 16:03:59.414  INFO 4853 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-09 16:03:59.419  INFO 4853 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-06-09 16:03:59.558  INFO 4853 --- [http-nio-8080-exec-1] o.s.i.h.s.MessagingMethodInvokerHelper   : Overriding default instance of MessageHandlerMethodFactory with provided one.
+2020-06-09 16:03:59.623  INFO 4853 --- [http-nio-8080-exec-1] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@4e25b25b
+2020-06-09 16:04:31.926  INFO 4853 --- [SpringContextShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'actionMessageGateway'
+2020-06-09 16:04:31.944  INFO 4853 --- [SpringContextShutdownHook] o.s.i.gateway.GatewayProxyFactoryBean    : stopped bean 'actionMessageGateway'
+2020-06-09 16:04:31.945  INFO 4853 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 16:04:31.945  INFO 4853 --- [SpringContextShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2020-06-09 16:04:31.945  INFO 4853 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-06-09 16:04:31.945  INFO 4853 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 16:04:31.945  INFO 4853 --- [SpringContextShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 0 subscriber(s).
+2020-06-09 16:04:31.945  INFO 4853 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 16:04:31.947  INFO 4853 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-09 16:04:31.947  INFO 4853 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-09 16:05:13.689  WARN 4878 --- [main] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-06-09 16:05:18.951  INFO 4878 --- [main] r.b.publisher.PublisherApplication       : Starting PublisherApplication on iMac-Mingian.local with PID 4878 (/Users/mingianbasanov/IdeaProjects/publisher/target/classes started by mingianbasanov in /Users/mingianbasanov/IdeaProjects/publisher)
+2020-06-09 16:05:18.952  INFO 4878 --- [main] r.b.publisher.PublisherApplication       : No active profile set, falling back to default profiles: default
+2020-06-09 16:05:22.465  INFO 4878 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-06-09 16:05:22.470  INFO 4878 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-06-09 16:05:22.472  INFO 4878 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-06-09 16:05:22.513  INFO 4878 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:05:22.655  INFO 4878 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:05:22.657  INFO 4878 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:05:22.886  INFO 4878 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-09 16:05:22.894  INFO 4878 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-09 16:05:22.894  INFO 4878 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-09 16:05:23.352  INFO 4878 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-09 16:05:23.352  INFO 4878 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4209 ms
+2020-06-09 16:05:23.495  INFO 4878 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-09 16:05:23.598  INFO 4878 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-09 16:05:23.789  INFO 4878 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 16:05:23.790  INFO 4878 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2020-06-09 16:05:23.790  INFO 4878 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-06-09 16:05:23.790  INFO 4878 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 16:05:23.790  INFO 4878 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 1 subscriber(s).
+2020-06-09 16:05:23.790  INFO 4878 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 16:05:23.790  INFO 4878 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'actionMessageGateway'
+2020-06-09 16:05:23.790  INFO 4878 --- [main] o.s.i.gateway.GatewayProxyFactoryBean    : started bean 'actionMessageGateway'
+2020-06-09 16:05:23.815  INFO 4878 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-09 16:05:23.823  INFO 4878 --- [main] r.b.publisher.PublisherApplication       : Started PublisherApplication in 20.577 seconds (JVM running for 26.358)
+2020-06-09 16:05:46.831  INFO 4878 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-09 16:05:46.954  INFO 4878 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-09 16:05:46.960  INFO 4878 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-06-09 16:05:46.981  INFO 4878 --- [http-nio-8080-exec-1] o.s.i.h.s.MessagingMethodInvokerHelper   : Overriding default instance of MessageHandlerMethodFactory with provided one.
+2020-06-09 16:05:46.983  INFO 4878 --- [http-nio-8080-exec-1] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@1d73ccb8
+2020-06-09 16:07:11.551  INFO 4878 --- [SpringContextShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'actionMessageGateway'
+2020-06-09 16:07:11.579  INFO 4878 --- [SpringContextShutdownHook] o.s.i.gateway.GatewayProxyFactoryBean    : stopped bean 'actionMessageGateway'
+2020-06-09 16:07:11.579  INFO 4878 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 16:07:11.580  INFO 4878 --- [SpringContextShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2020-06-09 16:07:11.580  INFO 4878 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-06-09 16:07:11.580  INFO 4878 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 16:07:11.580  INFO 4878 --- [SpringContextShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 0 subscriber(s).
+2020-06-09 16:07:11.580  INFO 4878 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 16:07:11.582  INFO 4878 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-09 16:07:11.582  INFO 4878 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-09 16:07:34.660  WARN 4920 --- [main] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-06-09 16:07:39.687  INFO 4920 --- [main] r.b.publisher.PublisherApplication       : Starting PublisherApplication on iMac-Mingian.local with PID 4920 (/Users/mingianbasanov/IdeaProjects/publisher/target/classes started by mingianbasanov in /Users/mingianbasanov/IdeaProjects/publisher)
+2020-06-09 16:07:39.688  INFO 4920 --- [main] r.b.publisher.PublisherApplication       : No active profile set, falling back to default profiles: default
+2020-06-09 16:07:40.351  INFO 4920 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-06-09 16:07:40.356  INFO 4920 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-06-09 16:07:40.358  INFO 4920 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-06-09 16:07:40.398  INFO 4920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:07:40.420  INFO 4920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:07:40.421  INFO 4920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:07:40.687  INFO 4920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-09 16:07:40.693  INFO 4920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-09 16:07:40.693  INFO 4920 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-09 16:07:40.833  INFO 4920 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-09 16:07:40.834  INFO 4920 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1120 ms
+2020-06-09 16:07:40.991  INFO 4920 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-09 16:07:41.080  INFO 4920 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-09 16:07:41.233  INFO 4920 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 16:07:41.233  INFO 4920 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2020-06-09 16:07:41.233  INFO 4920 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-06-09 16:07:41.233  INFO 4920 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 16:07:41.233  INFO 4920 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 1 subscriber(s).
+2020-06-09 16:07:41.234  INFO 4920 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 16:07:41.234  INFO 4920 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'actionMessageGateway'
+2020-06-09 16:07:41.234  INFO 4920 --- [main] o.s.i.gateway.GatewayProxyFactoryBean    : started bean 'actionMessageGateway'
+2020-06-09 16:07:41.256  INFO 4920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-09 16:07:41.264  INFO 4920 --- [main] r.b.publisher.PublisherApplication       : Started PublisherApplication in 16.892 seconds (JVM running for 23.004)
+2020-06-09 16:07:54.356  INFO 4920 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-09 16:07:54.381  INFO 4920 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-09 16:07:54.386  INFO 4920 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-06-09 16:07:54.407  INFO 4920 --- [http-nio-8080-exec-1] o.s.i.h.s.MessagingMethodInvokerHelper   : Overriding default instance of MessageHandlerMethodFactory with provided one.
+2020-06-09 16:07:54.409  INFO 4920 --- [http-nio-8080-exec-1] ActionMessageListener                    : ru.basanov.publisher.dto.ActionMessage@7720ca39
+2020-06-09 16:08:07.115  INFO 4920 --- [SpringContextShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'actionMessageGateway'
+2020-06-09 16:08:07.137  INFO 4920 --- [SpringContextShutdownHook] o.s.i.gateway.GatewayProxyFactoryBean    : stopped bean 'actionMessageGateway'
+2020-06-09 16:08:07.137  INFO 4920 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 16:08:07.138  INFO 4920 --- [SpringContextShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2020-06-09 16:08:07.138  INFO 4920 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-06-09 16:08:07.138  INFO 4920 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 16:08:07.138  INFO 4920 --- [SpringContextShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 0 subscriber(s).
+2020-06-09 16:08:07.138  INFO 4920 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 16:08:07.140  INFO 4920 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-09 16:08:07.140  INFO 4920 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-09 16:13:55.569  WARN 4975 --- [main] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5006 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-06-09 16:14:00.603  INFO 4975 --- [main] r.b.publisher.PublisherApplication       : Starting PublisherApplication on iMac-Mingian.local with PID 4975 (/Users/mingianbasanov/IdeaProjects/publisher/target/classes started by mingianbasanov in /Users/mingianbasanov/IdeaProjects/publisher)
+2020-06-09 16:14:00.604  INFO 4975 --- [main] r.b.publisher.PublisherApplication       : No active profile set, falling back to default profiles: default
+2020-06-09 16:14:01.629  INFO 4975 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-06-09 16:14:01.634  INFO 4975 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-06-09 16:14:01.636  INFO 4975 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-06-09 16:14:01.771  INFO 4975 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:14:01.776  INFO 4975 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:14:01.777  INFO 4975 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-09 16:14:02.088  INFO 4975 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-09 16:14:02.101  INFO 4975 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-09 16:14:02.101  INFO 4975 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-09 16:14:02.446  INFO 4975 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-09 16:14:02.447  INFO 4975 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1787 ms
+2020-06-09 16:14:02.737  INFO 4975 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-09 16:14:02.877  INFO 4975 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-09 16:14:03.050  INFO 4975 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 16:14:03.050  INFO 4975 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2020-06-09 16:14:03.050  INFO 4975 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-06-09 16:14:03.050  INFO 4975 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 16:14:03.050  INFO 4975 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 1 subscriber(s).
+2020-06-09 16:14:03.050  INFO 4975 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 16:14:03.050  INFO 4975 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'actionMessageGateway'
+2020-06-09 16:14:03.051  INFO 4975 --- [main] o.s.i.gateway.GatewayProxyFactoryBean    : started bean 'actionMessageGateway'
+2020-06-09 16:14:03.076  INFO 4975 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-09 16:14:03.085  INFO 4975 --- [main] r.b.publisher.PublisherApplication       : Started PublisherApplication in 17.946 seconds (JVM running for 24.196)
+2020-06-09 16:14:18.550  INFO 4975 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-09 16:14:18.563  INFO 4975 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-09 16:14:18.569  INFO 4975 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-06-09 16:14:18.604  INFO 4975 --- [http-nio-8080-exec-1] o.s.i.h.s.MessagingMethodInvokerHelper   : Overriding default instance of MessageHandlerMethodFactory with provided one.
+2020-06-09 16:14:18.611  INFO 4975 --- [http-nio-8080-exec-1] r.b.p.controller.MessageController       : ru.basanov.publisher.dto.ActionMessage@66a52e85
+2020-06-09 16:15:37.687  INFO 4975 --- [SpringContextShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'actionMessageGateway'
+2020-06-09 16:15:37.755  INFO 4975 --- [SpringContextShutdownHook] o.s.i.gateway.GatewayProxyFactoryBean    : stopped bean 'actionMessageGateway'
+2020-06-09 16:15:37.755  INFO 4975 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-06-09 16:15:37.756  INFO 4975 --- [SpringContextShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2020-06-09 16:15:37.756  INFO 4975 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-06-09 16:15:37.756  INFO 4975 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {service-activator:actionMessageListener.handler.serviceActivator} as a subscriber to the 'actionMessageChannel' channel
+2020-06-09 16:15:37.757  INFO 4975 --- [SpringContextShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.actionMessageChannel' has 0 subscriber(s).
+2020-06-09 16:15:37.757  INFO 4975 --- [SpringContextShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'actionMessageListener.handler.serviceActivator'
+2020-06-09 16:15:37.759  INFO 4975 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-09 16:15:37.759  INFO 4975 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
